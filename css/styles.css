@@ -1256,12 +1256,17 @@ body {
 }
 
 .menu-container .menu-toggle {
-  position: absolute;
   top: 40px;
   right: 40px;
-  color: #000;
+  min-width: 32px;
+  min-height: 32px;
 }
 
+.menu-container .menu-toggle:hover,
+.menu-container .menu-toggle:focus {
+  fill: var(--color-light);
+  background-color: var(--color-ocean);
+}
 .mobile-menu {
   display: flex;
   flex-direction: column;
