@@ -36,11 +36,13 @@ h6,
 p {
   margin: 0;
 }
+
 img {
   display: block;
   max-width: 100%;
   height: auto;
 }
+
 .button {
   font-family: inherit;
   display: block;
@@ -55,6 +57,7 @@ ul {
   margin: 0;
   padding-left: 0;
 }
+
 a {
   text-decoration: none;
 }
@@ -66,13 +69,16 @@ textarea {
   border: solid 1px #ffffff4d;
   border-radius: 4px;
 }
+
 body {
   font-family: var(--font-primary);
   color: var(--color-secondary);
 }
+
 .link {
   text-decoration: none;
 }
+
 .text {
   font-size: 16px;
   line-height: 1.5;
@@ -85,6 +91,7 @@ body {
   gap: var(--indent);
   padding-left: 0;
 }
+
 .card-set-item {
   flex-basis: calc((100% - (var(--indent) * (var(--items)- 1))) / var(--items));
 }
@@ -96,6 +103,7 @@ body {
   margin-right: auto;
   outline: 2px solid red;
 }
+
 @media screen and (min-width: 320px) {
   .container {
     max-width: 428px;
@@ -111,6 +119,8 @@ body {
 @media screen and (min-width: 1200px) {
   .container {
     max-width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -118,28 +128,82 @@ body {
 .header {
   border-bottom: 1px solid var(--color-accent);
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    min-width: 320px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .header-wrapper {
   display: flex;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  /* padding-top: 24px;
+  padding-bottom: 24px; */
 }
+
+@media screen and (max-width: 767px) {
+  .header-wrapper {
+    justify-content: space-between;
+    min-width: 320px;
+    max-width: 428px;
+  }
+}
+
 .header-nav {
   display: flex;
   align-items: center;
-  margin-right: 332px;
+  margin-right: 0;
+  /* margin-right: 332px; */
 }
+
+@media screen and (min-width: 768px) {
+  .header-nav {
+    margin-right: 118px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-nav {
+    margin-right: 332px;
+  }
+}
+
 .logo {
   font-family: var(--font-secondary);
   font-weight: 800;
   font-size: 18px;
-  line-height: 1.33;
   color: var(--color-iris);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  margin-right: 76px;
 }
+
+@media screen and (max-width: 767px) {
+  .logo {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .logo {
+    line-height: 1.17;
+    margin-right: 123px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logo {
+    line-height: 1.33;
+    margin-right: 76px;
+  }
+}
+
 .header-logo {
   color: var(--color-primary);
 }
@@ -148,6 +212,13 @@ body {
   gap: 40px;
   padding-left: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .header-list {
+    display: none;
+  }
+}
+
 .header-link {
   font-weight: 500;
   color: var(--color-primary);
@@ -161,6 +232,7 @@ body {
   transition-duration: var(--timing);
   transition-timing-function: var(--timing-function);
 }
+
 .current {
   color: var(--color-iris);
   position: relative;
@@ -187,6 +259,28 @@ body {
   gap: 40px;
   padding: 0;
 }
+
+@media screen and (max-width: 767px) {
+  .header-contacts {
+    display: none;
+    gap: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-contacts {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-contacts {
+    flex-direction: row;
+    gap: 40px;
+  }
+}
+
 .header-contact {
   font-weight: 400;
   color: var(--color-secondary);
@@ -198,6 +292,49 @@ body {
   transition-property: color;
   transition-duration: var(--timing);
   transition-timing-function: var(--timing-function);
+}
+
+@media screen and (min-width: 768px) {
+  .header-contact {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.04em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-contact {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+  }
+}
+
+.menu-toggle {
+  min-width: 32px;
+  min-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /*-----------------MAIN----------------- */
@@ -615,6 +752,18 @@ body {
 @media screen and (min-width: 1200px) {
   .footer {
     padding: 100px 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer-info {
+    padding-left: 108px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .footer-info {
+    padding-left: 15px;
   }
 }
 
