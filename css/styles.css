@@ -85,6 +85,10 @@ body {
   letter-spacing: 0.02em;
 }
 
+.accent {
+  color: var(--color-ocean);
+}
+
 .card-set {
   display: flex;
   flex-wrap: wrap;
@@ -101,7 +105,7 @@ body {
   padding-right: 16px;
   margin-left: auto;
   margin-right: auto;
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
 }
 
 @media screen and (min-width: 320px) {
@@ -135,6 +139,8 @@ body {
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
+    padding-top: 24px;
+    padding-bottom: 24px;
   }
 }
 
@@ -310,33 +316,6 @@ body {
   }
 }
 
-.menu-toggle {
-  min-width: 32px;
-  min-height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  border-radius: 50%;
-  outline: none;
-}
-
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-}
-
-.menu-toggle:hover,
-.menu-toggle:focus {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 /*-----------------MAIN----------------- */
 .hero-section {
   margin-left: auto;
@@ -354,7 +333,7 @@ body {
     padding-top: 112px;
     padding-bottom: 112px;
     background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url('../images/hero/img-1_mob.jpg');
+      url('../images/hero/img-1_mob.webp');
   }
 }
 
@@ -363,7 +342,7 @@ body {
     max-width: 768px;
     height: 436px;
     background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url('../images/hero/img-1_tab.jpg');
+      url('../images/hero/img-1_tab.webp');
   }
 }
 
@@ -374,7 +353,7 @@ body {
     padding-top: 188px;
     padding-bottom: 188px;
     background-image: linear-gradient(to right, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-      url('../images/hero/img-1_tab.jpg');
+      url('../images/hero/img-1_desk.webp');
   }
 }
 
@@ -1106,6 +1085,7 @@ body {
   color: var(--color-primary);
 }
 /* -------------------FORM---------------- */
+
 .modal-feedback-form {
   min-height: 456px;
 }
@@ -1216,4 +1196,119 @@ body {
   box-shadow: 0px 4px 4px 0px #00000026;
   margin: 0 auto;
   cursor: pointer;
+}
+
+/* --------------HEADER-BURGER-------------- */
+
+.menu-toggle {
+  min-width: 32px;
+  min-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.mobile-icon {
+  stroke: currentColor;
+}
+
+/* --------------MOBILE-MENU---------------- */
+.menu-container {
+  display: flex;
+  flex-direction: column;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 80px 40px 40px;
+  background-color: var(--color-light);
+  z-index: 999;
+
+  transform: translateX(100%);
+  transition-property: transform;
+  transition-duration: var(--timing);
+  transition-timing-function: var(--timing-function);
+  transition-delay: var(--timing);
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+}
+
+.menu-container .menu-toggle {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  color: #000;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
+
+  color: var(--color-primary);
+}
+
+.mobile-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: auto;
+  margin-bottom: 48px;
+}
+
+.mobile-phone {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.11;
+  color: var(--color-iris);
+}
+
+@media (max-width: 419px) {
+  .mobile-phone {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.mobile-mail {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #434455;
+}
+
+@media (min-width: 768px) {
+  .menu-container {
+    display: block;
+  }
 }
