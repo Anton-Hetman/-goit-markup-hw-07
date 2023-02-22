@@ -991,6 +991,7 @@ body {
   color: var(--color-light);
   box-shadow: 0px 2px 2px 0px #0000001f, 0px 2px 1px 0px #00000014, 0px 3px 1px 0px #0000001a;
 }
+
 .portfolio-title {
   max-width: 360px;
   font-weight: 500;
@@ -1000,6 +1001,7 @@ body {
   letter-spacing: 0.02em;
   margin-bottom: 8px;
 }
+
 .portfolio-list {
   row-gap: 48px;
   column-gap: 24px;
@@ -1021,9 +1023,6 @@ body {
   }
 }
 
-.portfolio-item {
-  max-width: 360px;
-}
 .portfolio-card {
   display: block;
   box-shadow: 0px 1px 6px 0px #2e2f4214;
@@ -1031,19 +1030,23 @@ body {
   transition-duration: var(--timing);
   transition-timing-function: var(--timing-function);
 }
+
 .portfolio-card:hover,
 .portfolio-card:focus {
   box-shadow: 0px 2px 1px 0px #2e2f4214, 0px 1px 1px 0px #2e2f4229, 0px 1px 6px 0px #2e2f4214;
 }
+
 .portfolio-card:hover .portfolio-overlay-text,
 .portfolio-card:focus .portfolio-overlay-text {
   box-shadow: 0px 2px 1px 0px #2e2f4214, 0px 1px 1px 0px #2e2f4229, 0px 1px 6px 0px #2e2f4214;
   transform: translate(0, 0);
 }
+
 .portfolio-overlay {
   position: relative;
   overflow: hidden;
 }
+
 .portfolio-overlay-text {
   position: absolute;
   top: 0;
@@ -1087,6 +1090,7 @@ body {
     width: 360px;
   }
 }
+
 /* ---------Modal Window---------- */
 .backdrop {
   position: fixed;
